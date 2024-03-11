@@ -45,7 +45,7 @@
                                 class="flex items-center h-12 px-4 w-64 bg-gray-200 mt-2 rounded focus:outline-none focus:ring-2 text-[#888181]"
                                 type="time" min="09:00" max="18:00" id="time" name="appt">
 
-                            <label class="font-semibold text-lg mt-3" for="appt">Select Background</label>
+                           
                             <!-- <select name="" id="selectBg" class="flex items-center h-12 px-4 w-64 bg-gray-200 mt-2 rounded focus:outline-none focus:ring-2 text-[#888181]">
                                     <option value="1">1</option>
                                     <option value="2">2</option>
@@ -115,11 +115,33 @@
             document.getElementById("firstPrizeChange").innerText = roundedNumber;
             document.getElementById("dateChange").innerText = date;
             //   document.getElementById("exDateChange").innerText = exDate;
-            document.getElementById("timeChange").innerText = time;
             document.getElementById("subTotalChange").innerText = subTotalResult;
             document.getElementById("taxChange").innerText = taxresult;
             document.getElementById("totalChange").innerText = totalResult;
+            function formatTime(inputTime) {
+  // Assuming inputTime is in the format HH:MM (24-hour format)
+  let [hours, minutes] = inputTime.split(':').map(Number);
 
+  // Check if hours is greater than or equal to 12
+  if (hours >= 12) {
+    // If hours is 12 or more, it's PM
+    if (hours > 12) {
+      hours -= 12; // Convert to 12-hour format
+    }
+    return `${hours}:${minutes} PM`;
+  } else {
+    // If hours is less than 12, it's AM
+    if (hours === 0) {
+      hours = 12; // Convert 0 to 12 for 12 AM
+    }
+    return `${hours}:${minutes} AM`;
+  }
+}
+
+// Example usage
+let inputTime = time; // Example input time in HH:MM format (24-hour format)
+let formattedTime = formatTime(inputTime);
+document.getElementById("timeChange").innerText = formattedTime;
 
         });
 
@@ -148,6 +170,7 @@
 
         // // Event listener for the button click
         // document.getElementById('changeBackground').addEventListener('click', changeBackground);
+        
     </script>
 </body>
 
