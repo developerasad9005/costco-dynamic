@@ -15,10 +15,21 @@
             font-family: 'Open Sans', sans-serif;
         }
 
-        .textareas h1 {
-            font-size: 27px;
-            font-weight: bold;
-            line-height: 34px;
+        .receptBg {
+            background: url(8.jpg);
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: cover;
+        }
+
+        .recept {
+            background: url('image/receptBG.png');
+            /* box-shadow: 0px 20px 50px 0px black; */
+            /* box-shadow: inset rgb(0, 0, 0) 0px 0px 60px -12px; */
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: cover;
+
         }
     </style>
 </head>
@@ -31,7 +42,19 @@
                     <div class="">
                         <div class="flex flex-col bg-white rounded shadow-lg p-12">
                             <h1 class="text-black text-2xl mb-5">Please Update data here</h1>
+                            <label class="font-semibold text-lg" for="usernameField">First Product Prize</label>
+                            <input
+                                class="flex items-center h-12 px-4 w-64 bg-gray-200 mt-2 rounded focus:outline-none focus:ring-2 text-[#888181]"
+                                type="number" placeholder="Enter your product Prize" id="firstPrize">
+                            <label class="font-semibold text-lg mt-3">Second Product Prize</label>
+                            <input
+                                class="flex items-center h-12 px-4 w-64 bg-gray-200 mt-2 rounded focus:outline-none focus:ring-2 text-[#888181]"
+                                type="number" placeholder="Enter your product Prize" id="secondPrize">
 
+                            <label class="font-semibold text-lg" for="usernameField">Third Product Prize</label>
+                            <input
+                                class="flex items-center h-12 px-4 w-64 bg-gray-200 mt-2 rounded focus:outline-none focus:ring-2 text-[#888181]"
+                                type="number" placeholder="Enter your product Prize" id="thirdPrize">
                             <label class="font-semibold text-lg mt-3" for="date">Date</label>
                             <input
                                 class="flex items-center h-12 px-4 w-64 bg-gray-200 mt-2 rounded focus:outline-none focus:ring-2 text-[#888181]"
@@ -45,8 +68,8 @@
                                 class="flex items-center h-12 px-4 w-64 bg-gray-200 mt-2 rounded focus:outline-none focus:ring-2 text-[#888181]"
                                 type="time" min="09:00" max="18:00" id="time" name="appt">
 
-                           
-                            <!-- <select name="" id="selectBg" class="flex items-center h-12 px-4 w-64 bg-gray-200 mt-2 rounded focus:outline-none focus:ring-2 text-[#888181]">
+                                <label class="font-semibold text-lg mt-3" for="appt">Select Background</label>
+                                <!-- <select name="" id="selectBg" class="flex items-center h-12 px-4 w-64 bg-gray-200 mt-2 rounded focus:outline-none focus:ring-2 text-[#888181]">
                                     <option value="1">1</option>
                                     <option value="2">2</option>
                                     <option value="3">3</option>
@@ -55,38 +78,100 @@
                                     <option value="6">6</option>
                                     <option value="7">7</option>
                                 </select> -->
+                                <button 
+                                class="flex items-center justify-center h-12 px-6 w-64 bg-red-400 mt-8 rounded font-semibold text-sm text-blue-100 hover:bg-blue-700"
+                                id="changeBackground">Change Background</button>
                             <button
                                 class="flex items-center justify-center h-12 px-6 w-64 bg-blue-600 mt-8 rounded font-semibold text-sm text-blue-100 hover:bg-blue-700"
                                 id="submit">Update</button>
                         </div>
                     </div>
                 </div>
-                <div class="right flex justify-center receptBg h-[850px] w-full items-center" id="receptBackground">
-                    <section class="recept w-full h-full relative">
-                        <img class="w-full h-full relative" src="image/costco.jpg" alt="">
-                        <div class="absolute bottom-[291px] left-[452px] textareas">
+                <div class="right p-32 flex justify-center receptBg h-full" id="receptBackground">
+                    <section class="py-10 px-6 recept w-full h-full">
+                        <div>
+                            <div class="flex justify-center">
+                                <img src="image/logo.png" alt="">
+                            </div>
+                            <div>
+                                <h1 class="text-black font-semibold text-center text-lg"><span
+                                        id="dateChange">2024/02/08</span>
+                                    <span id="timeChange">7:21 PM</span>
+                                </h1>
+                                <!-- EXPIRES <span id="exDateChange">2024/05/08</span> -->
+                            </div>
+                            <div class="flex justify-center h-[60px] mt-5">
+                                <img src="image/b.png" alt="">
+                            </div>
+                            <div class="mt-10 flex flex-row justify-between">
+                                <div>
+                                    <h1 class="mb-[-10px] text-black font-semibold">CLOTHING</h1>
+                                    <h1 class="text-black font-semibold" id="random1">042130186</h1>
+                                </div>
+                                <div>
+                                    <h1 class="text-black font-semibold">DNZN CARGO</h1>
+                                </div>
+                                <div>
+                                    <h1 class="text-black font-semibold">ST</h1>
+                                </div>
+                                <div>
+                                    <h1 class="text-black font-semibold">$ <span id="firstPrizeChange">750</span></h1>
+                                </div>
 
-                            <h1 class="text-black font-semibold text-right mt-4">$<span id="firstPrizeChange">750</span></h1>
+                            </div>
+                            <div class="flex flex-row justify-between">
+                                <div>
+                                    <h1 class="mb-[-10px] text-black font-semibold">GROCERY</h1>
+                                    <h1 class="text-black font-semibold" id="random2">231101523</h1>
+                                </div>
+                                <div>
+                                    <h1 class="text-black font-semibold">DUNKINDONUTS</h1>
+                                </div>
+                                <div>
+                                    <h1 class="text-black font-semibold ml-[-22px]">FN</h1>
+                                </div>
+                                <div>
+                                    <h1 class="text-black font-semibold">$ <span id="secondPrizeChange">31</span></h1>
+                                </div>
 
-                            <h1 class="text-black font-semibold text-right"><span class="ml-7"></span>
-                                $<span id="subTotalChange">962</span></h1>
+                            </div>
 
-                            <h1 class="text-black font-semibold text-right"><span class="mr-4"></span> $<span
-                                    id="taxChange">48.01</span></h1>
+                            <div class="flex flex-row justify-between">
+                                <div>
+                                    <h1 class="text-black font-semibold" id="random3">284020006</h1>
+                                </div>
+                                <div>
+                                    <h1 class="text-black font-semibold">MP 2 PC MILK</h1>
+                                </div>
+                                <div>
+                                    <h1 class="text-black font-semibold ml-[3px]">FN</h1>
+                                </div>
+                                <div>
+                                    <h1 class="text-black font-semibold">$ <span id="thirdPrizeChange">181</span></h1>
+                                </div>
 
+                            </div>
+                            <div>
+                                <h1 class="text-black font-semibold text-right mt-4">SUBTOTAL <span class="ml-7"></span>
+                                    $<span id="subTotalChange">962</span></h1>
+                                <div>
+                                    <h1 class="text-black font-semibold text-right">T = CO TAX 5.0000%<span
+                                            class="mr-4"></span> $<span id="taxChange">48.01</span></h1>
 
+                                </div>
+                                <div>
+                                    <h1 class="text-black font-semibold text-right">TOTAL<span class="mr-4"></span>
+                                        $<span id="totalChange">1010.01</span></h1>
 
-                            <h1 class="text-black font-semibold text-right"><span class="mr-4"></span>
-                                $<span id="totalChange">1010.01</span></h1>
-
-
-                        </div>
-                        <div class="absolute bottom-[200px] left-[60px]">
-                            <h1 class="text-black font-bold text-center text-2xl"><span
-                                    id="dateChange">2024/02/08</span>
-                                <span id="timeChange">7:21 PM</span>
-                            </h1>
-                            <!-- EXPIRES <span id="exDateChange">2024/05/08</span> -->
+                                </div>
+                                <div>
+                                    <h1 class="text-black font-semibold text-right">*<span id="random14">1767</span> DEBIT COST<span
+                                            class="mr-4"></span>$<span id="devitChange">1010.01</span></h1>
+                                    <h1 class="text-black font-semibold text-right">AID:A<span id="random12">0000000980840</span></h1>
+                                    <h1 class="text-black font-semibold text-right mr-[90px]">US DEBIT</h1>
+                                </div>
+                                <h1 class="text-black font-semibold text-center mt-10">REC#<span id="random13">2</span>-<span id="random4">9117</span>-<span id="random5">0271</span>-<span id="random6">0160</span>-<span id="random7">2484</span>-<span id="random8">6</span>VCD#<span id="random9">759</span>-<span id="random10">281</span>-<span id="random11">546</span></h1>
+                            </div>
                         </div>
                     </section>
                 </div>
@@ -101,76 +186,68 @@
             const date = document.getElementById("date").value;
             //   const exDate = document.getElementById("exDate").value;
             const time = document.getElementById("time").value;
-            let minNumber = 300; // Minimum number in the range
-            let maxNumber = 551; // Maximum number in the range
-            let randonResult =  Math.floor(Math.random() * (maxNumber - minNumber + 1)) + minNumber;
-            let roundedNumber = parseFloat(randonResult.toFixed(2));
-            const subtotal = randonResult;
-            let subTotalResult = parseFloat(subtotal.toFixed(2));
-            const tax = (subtotal * 1.54) / 100;
-            let taxresult = parseFloat(tax.toFixed(2));
-            const total = subTotalResult + taxresult;
-            let totalResult = parseFloat(total.toFixed(2));
-            // document.getElementById("random14").innerHTML = Math.floor(Math.random() * 9999);
-            document.getElementById("firstPrizeChange").innerText = roundedNumber;
+            const firstPrize = document.getElementById("firstPrize").value;
+            const secondPrize = document.getElementById("secondPrize").value;
+            const thirdPrize = document.getElementById("thirdPrize").value;
+            const subtotal = Number(firstPrize) + Number(secondPrize) + Number(thirdPrize);
+            const tax = (subtotal * 5) / 100;
+            const total = subtotal + tax;
+            const selectBG = document.getElementById('selectBg');
+            const bgChange = document.getElementById('receptBackground');
+
+            document.getElementById("random1").innerHTML = Math.floor(Math.random() * 999999999);
+            document.getElementById("random2").innerHTML = Math.floor(Math.random() * 999999999);
+            document.getElementById("random3").innerHTML = Math.floor(Math.random() * 999999999);
+            document.getElementById("random4").innerHTML = Math.floor(Math.random() * 9999);
+            document.getElementById("random5").innerHTML = Math.floor(Math.random() * 9999);
+            document.getElementById("random6").innerHTML = Math.floor(Math.random() * 9999);
+            document.getElementById("random7").innerHTML = Math.floor(Math.random() * 9999);
+            document.getElementById("random8").innerHTML = Math.floor(Math.random() * 9);
+            document.getElementById("random9").innerHTML = Math.floor(Math.random() * 999);
+            document.getElementById("random10").innerHTML = Math.floor(Math.random() * 999);
+            document.getElementById("random11").innerHTML = Math.floor(Math.random() * 999);
+            document.getElementById("random12").innerHTML = Math.floor(Math.random() * 9999999999999);
+            document.getElementById("random13").innerHTML = Math.floor(Math.random() * 9);
+            document.getElementById("random14").innerHTML = Math.floor(Math.random() * 9999);
+            document.getElementById("firstPrizeChange").innerText = firstPrize;
+            document.getElementById("secondPrizeChange").innerText = secondPrize;
+            document.getElementById("thirdPrizeChange").innerText = thirdPrize;
             document.getElementById("dateChange").innerText = date;
             //   document.getElementById("exDateChange").innerText = exDate;
-            document.getElementById("subTotalChange").innerText = subTotalResult;
-            document.getElementById("taxChange").innerText = taxresult;
-            document.getElementById("totalChange").innerText = totalResult;
-            function formatTime(inputTime) {
-  // Assuming inputTime is in the format HH:MM (24-hour format)
-  let [hours, minutes] = inputTime.split(':').map(Number);
+            document.getElementById("timeChange").innerText = time;
+            document.getElementById("subTotalChange").innerText = subtotal;
+            document.getElementById("taxChange").innerText = tax;
+            document.getElementById("totalChange").innerText = total;
+            document.getElementById("devitChange").innerText = total;
 
-  // Check if hours is greater than or equal to 12
-  if (hours >= 12) {
-    // If hours is 12 or more, it's PM
-    if (hours > 12) {
-      hours -= 12; // Convert to 12-hour format
-    }
-    return `${hours}:${minutes} PM`;
-  } else {
-    // If hours is less than 12, it's AM
-    if (hours === 0) {
-      hours = 12; // Convert 0 to 12 for 12 AM
-    }
-    return `${hours}:${minutes} AM`;
-  }
-}
-
-// Example usage
-let inputTime = time; // Example input time in HH:MM format (24-hour format)
-let formattedTime = formatTime(inputTime);
-document.getElementById("timeChange").innerText = formattedTime;
-
+          
         });
 
-        // function changeBackground() {
-        //     // Select the body element
-        //     const bgChange = document.getElementById('receptBackground');
+        function changeBackground() {
+            // Select the body element
+            const bgChange = document.getElementById('receptBackground');
 
-        //     // Array of image URLs
-        //     var imageUrls = [
-        //         '1.jpg',
-        //         '2.jpg',
-        //         '3.jpg',
-        //         '4.jpg',
-        //         '5.jpg',
-        //         '6.jpg',
-        //         '7.jpg',
-        //         '8.jpg',
-        //     ];
+            // Array of image URLs
+            var imageUrls = [
+                '1.jpg',
+                '2.jpg',
+                '3.jpg',
+                '4.jpg',
+                '5.jpg',
+                '6.jpg',
+                '7.jpg',
+                '8.jpg',
+            ];
 
-        //     // Generate a random index
-        //     var randomIndex = Math.floor(Math.random() * imageUrls.length);
+            // Generate a random index
+            var randomIndex = Math.floor(Math.random() * imageUrls.length);
 
-        //     // Set the background image
-        //     bgChange.style.backgroundImage = 'url(' + imageUrls[randomIndex] + ')';
-        // }
+            // Set the background image
+            bgChange.style.backgroundImage = 'url(' + imageUrls[randomIndex] + ')';
+        }
 
-        // // Event listener for the button click
-        // document.getElementById('changeBackground').addEventListener('click', changeBackground);
-        
+        // Event listener for the button click
+        document.getElementById('changeBackground').addEventListener('click', changeBackground);
     </script>
 </body>
 
